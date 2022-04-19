@@ -1,0 +1,17 @@
+##Orden Seleccionado por gusto:
+
+1-Ejs
+2-Handelbars
+3-Pug
+
+
+##Pug:
+No me gusto mucho la sintaxis y me parecio como mas lenta la carga de las paginas. Si me gusto la estructura y el armado de las plantillas, me parecio mas clara.
+
+
+##Handelbars:
+Me gusto la estructura de las plantillas pero no me convencio la definicion del engine en la api. Despues me gusto bastante para cosas pequeñas.
+
+##Ejs:
+Me gusto porque usa js y html que es lo que uno viene viendo, pero no me gusto lo de las funciones propias y me parece que queda un poco mas desordenado el codigo, aunque al ser modular puede ser practico para proyectos mas grandes.
+Otra cosa que no me gusto es el manejo de errores

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <header>
+        <title>Listado de Productos</title>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Lista de Productos</h2>
+            <% if (listaProductos.length > 0) { %>
+                    <div class="row">
+                      <div class="col">
+                        <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">id</th>
+                                        <th scope="col">Producto</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Img</th>
+                                    </tr>
+                                    </thead>
+                                <tbody>
+                                    <%  listaProductos.forEach(function(producto){ %>
+                                        <tr>
+                                            <th scope="row"><%= producto.id %></th>
+                                            <td><%= producto.title %></td>
+                                            <td><%= producto.title %></td>
+                                            <td><img src="<%= producto.thumbnail %>" class="img-thumbnail" alt="Imagen Producto" width="50" height="50"></td>
+                                        </tr>
+                                    <% }); %>
+                                </tbody>
+                            </table>
+                            <div class="col">
+                                <a class="btn btn-danger" role="button" href="http://localhost:8080/">Ingreso de Productos</a>      
+                            </div>
+                        </div>
+                    </div>
+                <% } else { %>
+                    <h2>No hay productos ingresados</h2>
+                <% } %>
+            </div>
+    </main>
+</body>
+</html>
+
+
+

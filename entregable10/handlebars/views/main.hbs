@@ -1,0 +1,41 @@
+
+{{!-- main.hbs --}}
+{{!-- {{> hatedChamps}}
+<br>
+
+{{> lovedChamps}}
+<br> --}}
+<div class="container">
+
+<h2>Lista de Productos</h2>
+
+{{#if listExists}}
+        <div class="row">
+          <div class="col">
+            <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Img</th>
+                        </tr>
+                        </thead>
+                    <tbody>
+                        {{#each listaProductos}}
+                            <tr>
+                                <th scope="row">{{this.id}}</th>
+                                <td>{{this.title}}</td>
+                                <td>{{this.price}}</td>
+                                <td><img src="{{this.thumbnail}}" class="img-thumbnail" alt="Imagen Producto" width="50" height="50"></td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+                <div class="col">
+                    <a class="btn btn-danger" role="button" href="http://localhost:8080/">Ingreso de Productos</a>      
+                </div>
+            </div>
+        </div>
+{{/if}}
+</div>
