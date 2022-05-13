@@ -1,14 +1,16 @@
-# Creacion Database
+# Entrega 18
+
+## Creacion Database
 
 use ecommerce
 
-##Creacion de Collections
+## Creacion de Collections
 
 db.createCollection("productos")
 db.createCollection("mensajes")
 
-##Agregar 10 documentos
-**Productos**
+## Agregar 10 documentos
+** Productos **
 
 db.productos.insertMany([
    {
@@ -94,7 +96,7 @@ db.productos.insertMany([
 
 ])
 
-**Mensajes**
+** Mensajes **
 
 db.mensajes.insertMany([
    {
@@ -150,23 +152,23 @@ db.mensajes.insertMany([
 
 ])
 
-##Listar Productos Ingresados
+## Listar Productos Ingresados
 
 db.productos.find()
 
-##Listar Mensajes Ingresados
+## Listar Mensajes Ingresados
 
 db.mensajes.find()
 
-##Contar los Productos Ingresados
+## Contar los Productos Ingresados
 
 db.productos.count() 
 
-##Contar los Mensajes Ingresados
+## Contar los Mensajes Ingresados
 
 db.mensajes.count() 
 
-##Insertar un Producto
+## Insertar un Producto
 
 db.use ecommerce
 	db.productos.insertOne(
@@ -179,35 +181,35 @@ db.use ecommerce
       fecha: ISODate()
     })
 
-##Listar Productos con precios menor a $1000
+## Listar Productos con precios menor a $1000
 
 	db.productos.find({"precio": {$lt: 1000}})
 
-##Listar Productos con precios entre $1000 y $3000
+## Listar Productos con precios entre $1000 y $3000
 
 	db.productos.find({ $and: [{ "precio": {$gte: 1000}}, {"precio": {$lte: 3000}} ]})
 
-##Listar Productos con precios mayores a $3000
+## Listar Productos con precios mayores a $3000
 
 	 db.productos.find({"precio": {$gt: 3000}})
 
-##Listar Nombre del 3er producto mas barato
+## Listar Nombre del 3er producto mas barato
 
   db.productos.find({},{nombre:1, _id:0}).sort({precio: 1}).skip(2).limit(1)
 
-##Agregar un campo Stock con valor de 100 a todos los productos
+## Agregar un campo Stock con valor de 100 a todos los productos
 
   db.productos.updateMany({}, [{ $set: { stock: 100 } }])  
 
-##Cambiar Stock a 0 en Productos con valor mayor a $4000
+## Cambiar Stock a 0 en Productos con valor mayor a $4000
 
   db.productos.updateMany({precio: {$gt:4000}}, [{ $set: { stock: 0 } }])
 
-##Borrar todos los productos con valor menor a $1000
+## Borrar todos los productos con valor menor a $1000
 
   db.productos.deleteMany( {precio: {$lt:1000}} )
 
-##Crear usuario "pepe" con passwd "asd456" y que no pueda escribir
+## Crear usuario "pepe" con passwd "asd456" y que no pueda escribir
 
   db.createUser({user: "pepe",pwd: "asd456",roles: [{ role: "read", db: "ecommerce" }]})
 
