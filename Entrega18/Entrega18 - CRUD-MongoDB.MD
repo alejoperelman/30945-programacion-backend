@@ -10,7 +10,7 @@ db.createCollection("productos")
 db.createCollection("mensajes")
 
 ## Agregar 10 documentos
-** Productos **
+###  Productos
 
 db.productos.insertMany([
    {
@@ -96,7 +96,7 @@ db.productos.insertMany([
 
 ])
 
-** Mensajes **
+### Mensajes
 
 db.mensajes.insertMany([
    {
